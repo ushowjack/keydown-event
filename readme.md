@@ -9,7 +9,11 @@ version: 1.0.1
 
 你可以通过npm包获取：
 ```shell
-npm i keydownEvent
+  npm i keydownEvent
+```
+或者在html中引入
+```html
+  <script src="./control-script.js"></script>
 ```
 **注意：**
 **1. 所有通过本npm包所创建的自定义键盘事件都必须以`.press`结尾。**
