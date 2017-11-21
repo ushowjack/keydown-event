@@ -15,14 +15,16 @@ version: 1.0.1
 ```html
   <script src="./control-script.js"></script>
 ```
-**注意：**
-**1. 所有通过本npm包所创建的自定义键盘事件都必须以`.press`结尾。**
-**2. 本模块使用ES6语法，请使用babel编译。**
+
+**注意：**
+**1. 所有通过本npm包所创建的自定义键盘事件都必须以`.press`结尾。**
+**2. 本模块使用ES6语法，请使用babel编译。**
+
 #### API
 
 **实例化**
 
-*实例化可以传入键值对，也可以不传参数默认为电脑端的键值对，但目前只有包括方向，数字键，enter和esc。*
+*实例化可以传入键值对，也可以不传参数默认为电脑端的键值对，但目前只有包括方向，数字键，enter和esc。*
 
 **支持事件节流**
 *参数 keyValue < Object > | isThrottle < Boolean | false > | interval < Number | 500 >*
@@ -36,11 +38,11 @@ version: 1.0.1
 
 **addListener**
 
-*绑定监听对象，**注意** keydown 事件绑定在document上，通过添加对象的监听才能使用自定义事件。可以对多个DOM元素绑定，但是一个DOM只能绑定一次。*
+*绑定监听对象，**注意** keydown 事件绑定在document上，通过添加对象的监听才能使用自定义事件。可以对多个DOM元素绑定，但是一个DOM只能绑定一次。*
 
 arguments | el
 ```javascript
-  improt Controlor from 'keydownEvent';
+  improt Controlor from 'keydownEvent';
 
   const controlor = new  Controlor();
   const BODY = document.querySelector('body');
@@ -59,15 +61,15 @@ arguments | el
 **keydownTrigger**
 
 *手动触发自定义事件方法*
-***注意**：解绑过后的事件是无法被触发的，参数可以监听事件的名称也可以是键名。*
+***注意**：解绑过后的事件是无法被触发的，参数可以监听事件的名称也可以是键名。*
 ```javascript
   const BODY = document.querySelector('body');
-  controlor.addListener(BODY);
+  controlor.addListener(BODY);
 
   BODY.addEventListener('enter.press', ev => {
     console.log('this is body!');
   });
-  
+  
   // 可以是controlor.keydownTrigger('enter',BODY);
   controlor.keydownTrigger('enter.press',BODY);
 
